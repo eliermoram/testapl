@@ -1,4 +1,4 @@
-$ docker build -t aplazo:lates .
+$ docker build -t aplazo:latest .
 
 $ docker-compose up —build
 
