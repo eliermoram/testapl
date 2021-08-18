@@ -1,0 +1,15 @@
+version: '2'
+services:
+    product-server:
+        container_name: aplazo
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: aplazo:latest
+        ports:
+            - 8081:8080
+        networks:
+            - spring-cloud-network
+networks:
+    spring-cloud-network:
+        driver: bridge
