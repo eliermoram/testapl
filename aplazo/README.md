@@ -2,7 +2,7 @@ $ mvn clean compile install
 
 $ docker build -t aplazo:latest .
 
-$ docker-compose up —build
+$ docker-compose up --build
 
 Service /health
 $ curl --location --request GET 'localhost:8081/health'
