@@ -1,3 +1,5 @@
+$ mvn clean compile install
+
 $ docker build -t aplazo:latest .
 
 $ docker-compose up —build
