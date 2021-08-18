@@ -2,10 +2,13 @@ package aplazo.com.mx.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import aplazo.com.mx.repository.CreditRepository;
+import aplazo.com.mx.repository.PaymentRepository;
 import aplazo.com.mx.request.RequestGeneratePayments;
 
 @SpringBootTest
@@ -13,6 +16,18 @@ public class AplazoServiceTest {
 
 	@Autowired
 	AplazoService aplazoService;
+	
+	@Autowired
+	PaymentRepository paymentRepository;
+	
+	@Autowired
+	CreditRepository creditRepository;
+	
+	@BeforeEach
+	public void beforeTest() {
+		paymentRepository.deleteAll();
+		creditRepository.deleteAll();
+	}
 	
 	@Test
 	void testGetCredits() {
